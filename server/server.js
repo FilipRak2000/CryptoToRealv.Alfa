@@ -2,10 +2,11 @@ const express = require('express')
 const app = express()
 const { port } = require('./config')
 const apiRouter = require('./routes/api')
+const webRouter = require('./routes/web')
 require('dotenv').config()
-const bodyParser = require('body-parser')
 const ejsLayouts = require('express-ejs-layouts')
 const path = require('path')
+const axios = require('axios');
 const mongoose = require("mongoose");
 mongoose.connect('mongodb://localhost:27017/Service')
 
@@ -13,17 +14,17 @@ app.set("view engine", "ejs")
 app.set('views', path.join(__dirname + '/views'));
 app.use(ejsLayouts)
 app.set("layout", './layout/main')
+app.use(express.static('public'))
 
 
+//middlewear
 
 
-app.use(bodyParser.json())
+app.use(express.urlencoded({extended:true}))
 app.use(express.json())
 //routes 
 app.use('/api', apiRouter)
-app.get("/", (req , res) =>{
-    res.render('pages/home')
-})
+app.use(webRouter)
 
 app.get("*", (req, res) =>{
     res.render('errors/404'), {

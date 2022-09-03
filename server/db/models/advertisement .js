@@ -10,10 +10,13 @@ const advertisementSchema  = new Schema({
     },
     category: String,
     file: String,
-    description: String,
+    description:{
+        type: String,
+        min: 10,
+        max: 500,
+    },
     localization: String,
     price: Number,
-    telnumber: Number,
     createdAt: {
         type: Date,
         default:() => Date.now(),

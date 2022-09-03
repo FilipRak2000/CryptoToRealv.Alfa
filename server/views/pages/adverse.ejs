@@ -1,0 +1,48 @@
+<%- include("../partials/nav");  %> 
+
+<%- include("../partials/price");  %> 
+
+<div class="container">
+<form method="POST">
+    <div class="p-2">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <div class="p-2">
+      <label for="exampleInputPassword1" class="form-label">Title</label>
+      <input type="text" name="title" class="form-control" id="exampleInputPassword1">
+    </div>
+    <div class="p-2">
+      <label for="exampleInputPassword1" class="form-label">Description</label>
+      <input type="text" name="description" class="form-control" id="exampleInputPassword1">
+    </div>
+    <div class="p-2">
+      <p>Category</p>
+      <select class="form-select" name="category" aria-label="Default select example">
+        <option selected>Choose Category</option>
+        <option value="Automotive">Automotive</option>
+        <option value="Real estate">Real estate</option>
+        <option value="Precious metals">Precious metals</option>
+        <option value="Accommodation">Accommodation</option>
+        <option value="Services">Services</option>
+        <option value="Electronics">Electronics</option>
+        <option value="Jobs">Jobs</option>
+        <option value="Other">Other</option>
+        <option value="9">Other</option>
+      </select>
+    </div>
+    <div class="p-2">
+      <label for="exampleInputPassword1" class="form-label">Images/Videos</label>
+      <input type="file" name="file" class="form-control" id="exampleInputPassword1">
+    </div>
+    <div class="p-2">
+      <label for="exampleInputPassword1" class="form-label">Localization</label>
+      <input type="text" name="localization" class="form-control" id="exampleInputPassword1">
+    </div>
+    <div class="p-2">
+      <label for="exampleInputPassword1" class="form-label">Price</label>
+      <input type="number" name="price" class="form-control" id="exampleInputPassword1">
+    </div>
+    <button type="submit" class="btn btn-success m-2">Create</button>
+  </form>
+</div>

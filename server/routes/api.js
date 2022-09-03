@@ -1,6 +1,6 @@
 const express = require('express')
 const AdvertisementController = require('../controllers/AdvertisementsController')
-const router = express.Router()
+const router = new express.Router()
 
 
 //pobieranie ogloszen
