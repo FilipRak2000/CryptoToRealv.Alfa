@@ -1,0 +1,23 @@
+<div class="container text-center mt-5">
+    <p class="text-success" style="font-size:40px;">Latest</p>
+</div>
+
+
+
+        
+        <div class="container mt-5">
+            <div class="row">
+            <% advertisement.forEach(advert=> { %>
+              <div class="col-4 mt-2">
+                <div class="card p-2">
+                <img src="/uploads/<%- advert.files[0].filename%>" class="img-fluid.height: auto;">
+                <p class="p-1"><%= advert.title %> </p>
+                <p class="p-1"><%= advert.category%> </p>
+                <p class="p-1"><%= advert.price + "" + 'BTC'%> </p>
+                <a href="/advertisement/<%= advert._id%>"><button class="btn btn-success" >Show</button></a>
+                </div>
+              </div>
+              <% }); %>
+            </div>
+          </div>
+          

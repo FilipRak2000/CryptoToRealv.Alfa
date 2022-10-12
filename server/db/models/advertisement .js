@@ -9,7 +9,7 @@ const advertisementSchema  = new Schema({
         max: 100,
     },
     category: String,
-    file: String,
+    files: [Object],
     description:{
         type: String,
         min: 10,
@@ -24,7 +24,7 @@ const advertisementSchema  = new Schema({
     email: {
         type: String,
         required: true,
-        unique: true,
+        unique: false,
         lowercase: true,
         trim: true,
     },

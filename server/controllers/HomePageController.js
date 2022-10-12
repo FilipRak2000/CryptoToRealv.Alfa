@@ -1,15 +1,18 @@
 const axios = require('axios');
+const Advertisement = require('../db/models/advertisement ')
 const { response } = require('express');
 let url = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=2&page=1&sparkline=false'
 
     class HomeController{
     async showHome(req,res){
-        res.render("pages/home", {btcprice, ethprice}),  {
+        let advertisement = await Advertisement.find({})
+        res.render("pages/home", {btcprice, ethprice, advertisement}),  {
            
         }
 
      
 }
+    
 
 
 }

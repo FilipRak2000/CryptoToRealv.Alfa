@@ -1,0 +1,40 @@
+<%- include("../partials/nav");  %> 
+
+<%- include("../partials/price");  %> 
+
+
+
+
+
+ <div class="container mt-5">
+      <h1><%= advertisement.title %></h1>
+      <h2> <%= advertisement.category%> </h2>
+      <h3><%= advertisement.description%> </h3>
+      <h3><%= advertisement.localization %> </h3>
+      <h3><%= advertisement.price%> BTC </h3>
+      <h3>Contact: </h3><h3><%= advertisement.email %> </h3>
+      <% let items = advertisement.files
+      console.log(items) 
+      %>;
+      <% console.log(advertisement.category) %>
+
+      <% items.forEach((item) =>{ %>
+            
+            <img src="/uploads/<%- item.filename %>" class="img-fluid advert-img">
+       <% }) %>
+      
+     
+    
+
+      <h2 class="mt-5">Chat with me!</h2>
+
+      <button class="btn btn-success m-1">Chat for interested</button>
+    </div>
+      
+      
+          
+
+
+
+
+<%- include("../partials/footer");  %> 

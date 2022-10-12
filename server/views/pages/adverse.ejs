@@ -3,7 +3,7 @@
 <%- include("../partials/price");  %> 
 
 <div class="container">
-<form method="POST">
+<form method="POST" action="/adverse" enctype="multipart/form-data">
     <div class="p-2">
       <label for="exampleInputEmail1" class="form-label">Email address</label>
       <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -32,8 +32,8 @@
       </select>
     </div>
     <div class="p-2">
-      <label for="exampleInputPassword1" class="form-label">Images/Videos</label>
-      <input type="file" name="file" class="form-control" id="exampleInputPassword1">
+      <label for="image" class="form-label">Images</label>
+      <input type="file" name="files" multiple="multiple" class="form-control" id="exampleInputPassword1">
     </div>
     <div class="p-2">
       <label for="exampleInputPassword1" class="form-label">Localization</label>
